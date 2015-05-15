@@ -26,7 +26,6 @@ app.import('bower_components/ic-ajax/dist/named-amd/main.js');
 app.import('bower_components/canvasloader/js/heartcode-canvasloader-min.js');
 app.import('vendor/uri.js');
 app.import('vendor/bootstrap.min.js');
-app.import('vendor/virtual-dom-utils.js');
 
 app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
 app.import('bower_components/bootstrap/dist/css/bootstrap-theme.min.css');
@@ -44,5 +43,9 @@ var publicFiles = pickFiles('public', {
     srcDir: '/',
     destDir: '/',
 })
+
+minifyJS: {
+  enabled: false
+}
 
 module.exports = mergeTrees([app.toTree(), fontTree, publicFiles], {overwrite: true});

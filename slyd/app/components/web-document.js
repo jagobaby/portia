@@ -299,6 +299,7 @@ export default Ember.Component.extend({
         this.uninstallEventHandlers();
         this.getIframe().bind('click', this.clickHandlerBrowse.bind(this));
         this.getIframe().bind('scroll', this.scrollHandlerBrowse.bind(this));
+        this.getIframe().bind('keyup', this.keyUpHandler.bind(this));
     },
 
     installEventHandlersForSelecting: function() {
@@ -469,6 +470,9 @@ export default Ember.Component.extend({
                 }
             }
         }
+    },
+
+    keyUpHandler: function() {
     },
 
     sendDocumentEvent: function(name) {
